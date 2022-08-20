@@ -9,21 +9,35 @@ let random_grade_div = document.getElementById("random-grade");
 
 // طبّق الخطوة 4 في أسفل هذا الكومنت
 
+grades.pop();
+
 // طبّق الخطوة 5 في أسفل هذا الكومنت
+
+grades.push(99);
 
 // طبّق الخطوة 6 أسفل هذا الكومنت
 
-
+for (let i = 0; i < grades.length; i++) {
+  all_grades_div.innerHTML = `<div>${grades}</div>`;
+}
 
 function search() {
   let inputValue = document.getElementById("input").value;
-  
+
   // طبّق الخطوة 7 أسفل هذا الكومنت
-  
+
+  let filteredGrades = grades.filter((x) => x == inputValue);
+
+  console.log(filteredGrades);
+
+  if (filteredGrades == 0) {
+    console.log("الدرجة غير موجوده");
+  }
 }
 
 // طبّق الخطوة 8 و 9 أسفل هذا الكومنت
 
+let randomIndex = Math.floor(Math.random() * grades.length);
 // طبّق الخطوة 10 أسفل هذا الكومنت
 
-
+random_grade_div.innerHTML = `<div>${grades[randomIndex]}</div>`;
